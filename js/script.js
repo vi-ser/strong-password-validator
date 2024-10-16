@@ -1,5 +1,6 @@
 const passwordInput = document.getElementById("password");
 const validationBar = document.getElementById("bar");
+const lockElement = document.getElementById("lock");
 
 const lengthCriteria = document.getElementById("length-condition");
 const capitalCriteria = document.getElementById("capital-condition");
@@ -66,9 +67,11 @@ passwordInput.addEventListener("input", function () {
   } else if (strength == 3) {
     validationBar.style.backgroundColor = "#FDEB86";
     validationBar.style.width = "75%";
+    lockElement.classList.add("unlocked");
   } else if (strength == 4) {
     validationBar.style.backgroundColor = "#41C0A1";
     validationBar.style.width = "100%";
+    lockElement.classList.remove("unlocked");
   }
 
   console.log(strength);
